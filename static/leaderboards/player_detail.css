@@ -1,0 +1,169 @@
+/* TEAM DASHBOARD */
+/* DASHBOARD SECTION */
+#dashboard {
+	color: #f5f5f5;
+	background-color: #323639;
+    text-align: center;
+    background: url('../images/backgrounds/rl-bg-field-50.jpg') no-repeat center center fixed;
+	-ms-background-size: cover;
+	background-size: cover;
+}
+#player-name {
+	margin: auto;
+	display: inline-block;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+.label {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#player-name h5,
+.label h5 {
+	text-shadow: 2px 2px 3px rgba(0,0,0,0.75);
+	font-weight: 100;
+}
+#player-name .fa-caret-left,
+.label .fa-caret-left {
+	text-shadow: -5px 0px 1px rgba(0, 0, 0, 1);
+}
+#player-name .fa-caret-right,
+.label .fa-caret-right {
+	text-shadow: 5px 0px 1px rgba(0, 0, 0, 1);
+}
+#player-name h1 {
+	font-size: 70px;
+	text-shadow: 2px 2px 3px rgba(0,0,0,0.75);
+}
+#playerCard #score .row{
+	padding: 8px;
+}
+#playerCard i {
+	text-shadow: 2px 2px 3px rgba(0,0,0,0.75);
+}
+#maincard #score-mmr .row{
+	padding: 14px 10px;
+}
+#maincard #mc-mid-col i,#maincard #mc-mid-col h3,#maincard #mc-mid-col h5 {
+	margin: 0px;
+	padding: 3px;
+}
+#maincard #mc-mid-col i {
+	text-shadow: 2px 2px 3px rgba(0,0,0,0.75);
+}
+.player-card {
+    border: none !important;
+}
+#cta {
+	background-color: rgba(0, 0, 0, 0.7);
+  }
+/* MEDIA QUERIES */
+@media (max-width: 991px) {
+	#mc-left-col .card-body {
+		padding: 5px;
+	}
+	#pc-left-col #player-rank-label,
+	#mc-left-col #rank-label {
+		font-size: 35px;
+		margin: 0;
+		margin-top: 4px;
+	}
+	#pc-left-col #player-rank-value,
+	#mc-left-col #rank-value {
+		font-size: 50px;
+		margin: 0;
+	}
+	#pc-left-col #player-rank-value .fas,
+	#mc-left-col #rank-value .fas {
+		font-size: 30px !important;
+		margin-right: 0px !important;
+		padding-bottom: 8px !important;
+	}
+	#pc-left-col h4,
+	#mc-left-col h4 {
+		font-size: 20px;
+	}
+	#assists-saves .min-row {
+		padding: 15px 5px ! important;
+	}
+	#assists-saves i {
+		font-size: 30px;
+		padding: 8px;
+	}
+	#assists-saves h3 {
+		font-size: 20px;
+	}
+	#assists-saves h5 {
+		font-weight: 300;
+		font-size: 14px;
+		margin: 0px;
+	}
+	#mc-mid-col .row {
+		padding: 15px 5px !important;
+	}
+	#mc-mid-col .col {
+		padding: 0 5px;
+		margin: 0 !important;
+	}
+	#mc-right-col .card-body {
+		padding: 5px !important;
+		margin: 0 !important;
+	}
+	#mc-right-col #win-value {
+		font-size: 50px;
+	}
+	#mc-right-col #win-value .fas {
+		font-size: 25px !important;
+		padding-bottom: 8px !important;
+		margin-left: 4px !important;
+	}
+	#mc-right-col #win-label {
+		font-size: 35px;
+	}
+	.player-card .card-body {
+		padding-top: 12px;
+		padding-bottom: 8px;
+	}
+	.player-card h2 {
+		margin: 0;
+	}
+}
+@media (max-width: 767px) {
+	#player-name h1 {
+		font-size: 40px;
+	}
+	#team-name h1 {
+		font-size: 32px;
+	}
+	#mc-mid-col .main-group i {
+		font-size: 30px;
+	}
+	#mc-mid-col .main-group h3 {
+		font-size: 20px;
+	}
+	#mc-mid-col .main-group h5 {
+		font-size: 16px;
+	}
+	#mc-mid-col .sub-group i {
+		font-size: 30px;
+	}
+	#mc-mid-col .sub-group h3 {
+		font-size: 20px;
+	}
+	#mc-mid-col .sub-group h5 {
+		font-size: 16px;
+	}
+	#cta .col-md-6 {
+		text-align: center !important;
+	}
+}
+@media (max-width: 500px) {
+	#player-name h1 {
+		font-size: 30px;
+	}
+	#team-name h1 {
+		font-size: 20px;
+	}
+	.player-card h2:nth-of-type(2) {
+		font-size: 20px;
+	}
+}

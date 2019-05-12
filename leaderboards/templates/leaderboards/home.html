@@ -1,0 +1,96 @@
+{% extends 'leaderboards/base.html' %}
+
+{% load static %}
+
+{% block title %}Scrim Nabs{% endblock %}
+
+{% block stylesheet %}
+<link rel="stylesheet" type="text/css" href="{% static 'leaderboards/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- TOP TEN LEADERBOARD -->
+<div id="leaderBoard">
+  <h1 class="pt-4">ScrimNabs</h1>
+  <div id="tableContainer" class="p-0">
+    <table data-toggle="table" data-sort-name="team-rank" data-sort-order="asc"
+      class="table-dark table-hover table-striped table-borderless">
+      <!-- TABLE HEAD -->
+      <thead>
+        <tr>
+          <th data-field="team-rank">
+            <span>RANK</span>
+          </th>
+          <th data-field="team-name">
+            <span>TEAM</span>
+          </th>
+          <th data-field="team-wins">
+            <span>WINS</span>
+          </th>
+          <th data-field="team-losses">
+            <span>LOSSES</span>
+          </th>
+          <th data-field="team-elo">
+            <span>ELO</span>
+          </th>
+          <th data-field="team-win-ratio">
+            <span>WIN%</span>
+          </th>
+        </tr>
+      </thead>
+      <!-- END TABLE HEAD -->
+      <!-- TABLE CONTENT -->
+      <tbody>
+        {% for team in teams %}
+          {% if forloop.counter <= 10 %}
+            <tr>
+              <td>{{ forloop.counter }}</td>
+              <td class="p-0">
+                <a class="btn btn-primary" href="/team/{{team.id}}">
+                  <table class="w-100">
+                    <tr>
+                      <td>{{team.name}}</td>
+                      <td class="text-right"><i class="fas fa-chevron-right"></i></td>
+                    </tr>
+                  </table>
+                </a>
+              </td>
+              <td>{{team.series_won}}</td>
+              <td>{{team.series_lost}}</td>
+              <td>{{team.mmr}}</td>
+              <td>{% if team.games_played == 0 %} - {% else %} {{team.win_percent}}% {% endif %}
+              </td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+      </tbody>
+      <!-- END TABLE CONTENT -->
+    </table>
+  </div>
+</div>
+<!-- END TOP TEN LEADERBOARD -->
+<!-- VIEW ALL BUTTONS -->
+<div id="cta" class="mt-2 my-5 pt-4">
+  <div class="row">
+    <div class="col-md-6 text-right px-4">
+      <a class="btn btn-outline-light main-btn-outline px-4 mb-4 box-shadow" href="/teams" role="button">
+        <i class="fas fa-users"></i>
+        VIEW ALL TEAMS
+        <i class="fas fa-chevron-right"></i>
+      </a>
+    </div>
+    <div class="col-md-6 text-left px-4">
+      <a class="btn btn-outline-light main-btn-outline px-4 mb-4 box-shadow" href="/players" role="button">
+        <i class="fas fa-user"></i>
+        VIEW ALL PLAYERS
+        <i class="fas fa-chevron-right"></i>
+      </a>
+    </div>
+  </div>
+</div>
+<!-- END VIEW ALL BUTTONS  -->
+
+{% endblock %}
+
+{% block js %}
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends 'leaderboards/base.html' %}
+
+{% load static %}
+
+{% block title %}Teams{% endblock %}
+
+{% block stylesheet %}
+  <link rel="stylesheet" type="text/css" href="{% static 'leaderboards/teams.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- TEAM LEADERBOARD -->
+<div id="leaderBoard">
+	<h1 class="pt-4">Teams</h1>
+	<div id="tableContainer">
+		<div class="buttons-toolbar"></div>
+		<table 
+		data-toggle="table"
+		data-pagination="true"
+		data-search="true"
+		data-buttons-toolbar=".buttons-toolbar"
+		data-show-columns="true"
+		data-sort-name="team-rank" 
+		data-sort-order="asc"
+		data-pagination-h-align="left"
+		data-pagination-detail-h-align="right"
+		class="table-dark table-hover table-striped table-borderless">
+			<thead>
+				<tr>
+					<th data-field="team-rank" data-sortable="true">RANK</th>
+					<th data-field="team-name" data-sortable="true">TEAM</th>
+					<th data-field="team-wins" data-sortable="true">WINS</th>
+					<th data-field="team-losses" data-sortable="true">LOSSES</th>
+					<th data-field="team-elo" data-sortable="true">ELO</th>
+					<th data-field="team-win-ratio" data-sortable="true">WIN%</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for team in teams %}
+				<tr>
+					<td>{{ forloop.counter }}</td>
+					<td class="p-0">
+						<a class="btn btn-primary" href="/team/{{team.id}}">
+							<table class="w-100">
+								<tr>
+									<td>{{team.name}}</td>
+									<td class="text-right"><i class="fas fa-chevron-right"></i></td>
+								</tr>
+							</table>
+						</a>
+					</td>
+					<td>{{team.series_won}}</td>
+					<td>{{team.series_lost}}</td>
+					<td>{{team.mmr}}</td>
+					<td>{% if team.games_played == 0 %}
+								-
+							{% else %}
+								{{team.win_percent}}%
+							{% endif %}
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	<!-- VIEW ALL BUTTONS -->
+  <div id="cta" class="mt-2 my-5 pt-4 text-center">
+		<a class="btn btn-outline-light main-btn-outline px-4 mb-4 box-shadow" href="/players" role="button">
+			<i class="fas fa-users"></i>
+			VIEW ALL PLAYERS
+			<i class="fas fa-chevron-right"></i>
+		</a>
+	</div>
+	<!-- END VIEW ALL BUTTONS  -->
+</div>
+<!-- END PLAYER LEADERBOARD-->
+{% endblock %}
+	
+{% block js %}
+{% endblock %}

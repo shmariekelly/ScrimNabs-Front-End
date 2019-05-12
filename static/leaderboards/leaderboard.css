@@ -1,0 +1,176 @@
+/* LEADERBOARD */
+#container {
+  background-color: #323639;
+  background: url('../images/backgrounds/rl-bg-dark-50.jpg') no-repeat center center fixed;
+  -ms-background-size: cover;
+  background-size: cover;
+}
+#leaderBoard h1 {
+  text-align: center;
+  color: var(--light-primary);
+  font-family: var(--font-graphic);
+  font-size: 70px;
+  text-shadow: 5px 5px var(--main-color);
+  padding: 15px;
+}
+#leaderBoard #tableContainer {
+  max-width: 820px;
+  margin: auto;
+  padding: 0px 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.5), 0 10px 10px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.5), 0 10px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.5), 0 10px 10px rgba(0, 0, 0, 0.5);
+}
+#leaderBoard table {
+  text-align: center;
+}
+#leaderBoard th {
+  background-color: var(--main-color);
+}
+#leaderBoard th:hover {
+  background-color: var(--main-color-dark-10);
+}
+#leaderBoard th {
+  padding-right: 8px;
+}
+#leaderBoard tr .btn {
+  background-color: rgba(102, 45, 145, 0.5);
+  border: none;
+  border-radius: 0;
+  width: 100%;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+#leaderBoard tr .btn:hover,#leaderBoard tr .btn:focus {
+  background-color: var(--main-color-dark-10);
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+#leaderBoard tr .btn tr {
+  background: none;
+  white-space: nowrap;
+}
+
+/* TABLE TOOLBARS */
+.buttons-toolbar .search {
+  padding: 20px 10px;
+}
+.buttons-toolbar .float-right {
+  padding: 20px 10px;
+}
+.fixed-table-pagination .pagination-detail {
+  color: var(--light-primary);
+  padding: 20px 10px;
+  margin: 0px !important;
+}
+.fixed-table-pagination .dropdown-menu {
+  background-color: #6c757D;
+}
+.fixed-table-pagination .dropdown-menu .active {
+  background-color: var(--main-color);
+}
+.fixed-table-pagination .dropdown-menu .active:hover {
+  background-color: var(--main-color);
+}
+.fixed-table-pagination .dropdown-menu a {
+  color: var(--light-primary);
+}
+.fixed-table-pagination .dropdown-menu a:hover {
+  background-color: #535a5f;
+}
+.fixed-table-pagination .dropdown-menu a {
+  color: var(--light-primary);
+}
+.fixed-table-pagination .dropdown-menu a:hover {
+  background-color: #535a5f;
+}
+.fixed-table-pagination .float-left {
+  color: var(--light-primary);
+  padding: 20px 10px;
+  margin: 0 !important;
+}
+.fixed-table-pagination .float-left a {
+  color: var(--light-primary);
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+.fixed-table-pagination .float-left a:hover {
+  color: var(--light-primary);
+  background-color: #535a5f;
+  border-color: #535a5f;
+}
+.fixed-table-pagination .float-left .active a {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+}
+/* MEDIA QUERIES */
+@media (max-width: 900px) {
+  table .th-inner {
+    padding: 8px 18px 8px 8px !important;
+  }
+  table td {
+    padding: 6px !important;
+  }
+}
+@media (max-width: 650px) {
+  .fixed-table-pagination {
+    position: relative;
+  }
+  .fixed-table-pagination .float-right {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    margin-top: 30px;
+  }
+  .fixed-table-pagination .float-left {
+    width: 100%;
+    padding-bottom: 70px;
+  }
+  .fixed-table-pagination .float-left ul {
+    margin: auto !important;
+  }
+  #leaderBoard h1 {
+    font-size: 40px;
+    text-shadow: 3px 3px var(--main-color);
+  }
+}
+@media (max-width: 470px) {
+  .buttons-toolbar .float-right {
+    padding: 12px 6px 12px 6px;
+  }
+  .fixed-table-pagination {
+    font-size: 12px;
+  }
+  .fixed-table-pagination .float-right {
+    padding-top: 10px;
+  }
+  .fixed-table-pagination .float-right .page-size {
+    font-size: 12px;
+  }
+  .fixed-table-pagination .float-right .btn {
+    padding: 3px 10px;
+  }
+}
+@media (max-width: 400px) {
+  .buttons-toolbar .search {
+    max-width: 190px;
+  }
+}
+@media (max-width: 358px) {
+  .fixed-table-pagination .float-left {
+    padding-bottom: 90px;
+  
+  }
+}
+/* CTA */
+#cta {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+@media (max-width: 767px) {
+  #cta .col-md-6 {
+      text-align: center !important;
+  }
+}

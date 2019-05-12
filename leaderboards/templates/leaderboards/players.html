@@ -1,0 +1,77 @@
+{% extends 'leaderboards/base.html' %}
+
+{% load static %}
+
+{% block title %}Players{% endblock %}
+
+{% block stylesheet %}
+  <link rel="stylesheet" type="text/css" href="{% static 'leaderboards/players.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- PLAYER LEADERBOARD -->
+<div id="leaderBoard">
+  <h1 class="pt-4">Players</h1>
+  <div id="tableContainer">
+    <div class="buttons-toolbar"></div>
+    <table 
+    data-toggle="table"
+    data-pagination="true"
+    data-search="true"
+    data-buttons-toolbar=".buttons-toolbar"
+    data-show-columns="true"
+    data-sort-name="team-rank" 
+    data-sort-order="asc"
+    data-pagination-h-align="left"
+    data-pagination-detail-h-align="right"
+    class="table-dark table-hover table-striped table-borderless">
+      <thead>
+        <tr>
+          <th data-field="player-rank" data-sortable="true">RANK</th>
+          <th data-field="player-name" data-sortable="true">PLAYER</th>
+          <th data-field="player-score" data-sortable="true">SCORE</th>
+          <th data-field="player-goals" data-sortable="true">GOALS</th>
+          <th data-field="player-shots%" data-sortable="true">SHOT%</th>
+          <th data-field="player-assists" data-sortable="true">ASSISTS</th>
+          <th data-field="player-saves" data-sortable="true">SAVES</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for player in players %}
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td class="p-0">
+            <a class="btn btn-primary" href="/player/{{player.id}}">
+              <table class="w-100">
+                <tr>
+                  <td>{{player.name}}</td>
+                  <td class="text-right"><i class="fas fa-chevron-right"></i></td>
+                </tr>
+              </table>
+            </a>
+          </td>
+          <td>{{player.score}}</td>
+          <td>{{player.goals}}</td>
+          <td>{{player.goal_percent}}%</td>
+          <td>{{player.assists}}</td>
+          <td>{{player.saves}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <!-- VIEW ALL BUTTONS -->
+  <div id="cta" class="mt-2 my-5 pt-4 text-center">
+    <a class="btn btn-outline-light main-btn-outline px-4 mb-4 box-shadow" href="/teams" role="button">
+      <i class="fas fa-users"></i>
+      VIEW ALL TEAMS
+      <i class="fas fa-chevron-right"></i>
+    </a>
+  </div>
+  <!-- END VIEW ALL BUTTONS  -->
+</div>
+<!-- END PLAYER LEADERBOARD-->
+{% endblock %}
+
+{% block js %}
+{% endblock %}

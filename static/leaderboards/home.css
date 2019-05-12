@@ -1,0 +1,20 @@
+@import "leaderboard.css";
+#leaderBoard th {
+  padding: 0px;
+}
+#leaderBoard th:hover {
+  background-color: var(--main-color);
+}
+#cta {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+@media (max-width: 900px) {
+  table .th-inner {
+    padding: 8px 8px 8px 8px !important;
+  }
+}
+@media (max-width: 767px) {
+  #cta .col-md-6 {
+    text-align: center !important;
+  }
+}
